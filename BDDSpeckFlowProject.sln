@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDDSpeckFlowProject", "BDDSpeckFlowProject\BDDSpeckFlowProject.csproj", "{1E86A1F3-983C-4821-AA7D-E059A14A30DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestSettings", "TestSettings", "{7FC07038-B25A-4C0B-9297-F264D05260A4}"
+	ProjectSection(SolutionItems) = preProject
+		Test.runsettings = Test.runsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E86A1F3-983C-4821-AA7D-E059A14A30DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E86A1F3-983C-4821-AA7D-E059A14A30DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E86A1F3-983C-4821-AA7D-E059A14A30DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E86A1F3-983C-4821-AA7D-E059A14A30DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A7889A9-9FE5-4230-9B3A-2875ABD763DC}
+	EndGlobalSection
+EndGlobal
