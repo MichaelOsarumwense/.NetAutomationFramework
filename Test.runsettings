@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+
+  <!-- Parameters used by tests at runtime -->
+
+  <TestRunParameters>
+    <Parameter name="Yahoourl" value="https://login.yahoo.com/" />
+    <Parameter name="urlPortal" value="https://portal-test01.regdev.uk/login" />
+    <Parameter name="urlGI" value="https://reg-test01-platform.azurewebsites.net/"/>
+    <Parameter name="urlDUA" value="https://dua-test01.regdev.uk/login"/>
+
+
+    <!--<Parameter name="webAppUserName" value="Admin" />
+    <Parameter name="webAppPassword" value="Password" />-->
+  </TestRunParameters>
+
+</RunSettings>
