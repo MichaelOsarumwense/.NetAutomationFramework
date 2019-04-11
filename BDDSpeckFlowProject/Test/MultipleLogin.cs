@@ -20,7 +20,7 @@ namespace BDDSpeckFlowProject.Test
         [Given(@"The User Navigates tru facebook")]
         public void GivenTheUserNavigatestruFacebook()
         {
-            
+            Driver.driver = new ChromeDriver();
             Driver.driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["BaseUrl"]);
             Driver.driver.Manage().Window.Maximize();
             Thread.Sleep(1000);
