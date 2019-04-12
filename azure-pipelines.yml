@@ -31,25 +31,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: PublishSymbols@1
-  displayName: 'Publish symbols path: '
-  inputs:
-    SearchPattern: '**\bin\**\*.pdb'
-  continueOnError: true
-
-- task: copyFiles@1
-  displayName: 'Copy Files to: $(build.artifactsagingdirectory)'
-  inputs:
-    SourceFolder: '$(build.sourcedirectory)'
-    Contents: |
-     **\bin\$(BuildConfiguration)\**
-     src\*.testsettings
-    TargetFolder: '$(build.artifactsagingdirectory)'
-  condition: succeededOrFailed()
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  inputs:
-    PathtoPublish: '$(build.artifactsagaingdirectory)'
-  condition: succeededOrFailed()
