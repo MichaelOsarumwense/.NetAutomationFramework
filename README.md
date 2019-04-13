@@ -1,2 +1,0 @@
-# .NetAutomationFramework
-For learning DevOps
