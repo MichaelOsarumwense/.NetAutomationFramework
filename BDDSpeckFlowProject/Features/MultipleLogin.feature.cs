@@ -74,7 +74,7 @@ namespace BDDSpeckFlowProject.Features
         [NUnit.Framework.TestCaseAttribute("TestAccount", "123qweQWE!@#", null)]
         [NUnit.Framework.TestCaseAttribute("BrokerAccount", "123qweQWE!@#", null)]
         [NUnit.Framework.TestCaseAttribute("IngridN", "user1324%", null)]
-        public virtual void Multiple_Role_Signin(string username, string password, string[] exampleTags)
+        public virtual void Multiple_Role_Signin(string usename, string password, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple_Role_Signin", null, exampleTags);
 #line 3
@@ -83,7 +83,7 @@ namespace BDDSpeckFlowProject.Features
 #line 4
  testRunner.Given("The User Navigates tru facebook", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.When(string.Format("I enter {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I enter {0} and {1}", usename, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
  testRunner.Then("the user can clear road", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

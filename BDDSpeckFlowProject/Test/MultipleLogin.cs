@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
@@ -12,35 +13,36 @@ using TechTalk.SpecFlow;
 
 namespace BDDSpeckFlowProject.Test
 {
+    [Parallelizable]
     [Binding]
     public class MultipleLogin
-        
-    {
 
+    {
+        public IWebDriver Driver { get; set;}
         [Given(@"The User Navigates tru facebook")]
         public void GivenTheUserNavigatestruFacebook()
         {
-            Driver.driver = new ChromeDriver();
-            Driver.driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["BaseUrl"]);
-            Driver.driver.Manage().Window.Maximize();
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["BaseUrl"]);           
             Thread.Sleep(1000);
         }
         [When(@"I enter (.*) and (.*)")]
-        public void WhenIEnterAnd(string username, string password)
+        public void WhenIEnterAnd(string usename, string password)
         {
-            LoginPage login = new LoginPage();
-            login.Email.SendKeys(username);
+            LoginPage login = new LoginPage(Driver);
+            login.Email.SendKeys(usename);
             login.Passwword.SendKeys(password);
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
         }
         [Then(@"the user can clear road")]
         public void theusercanclearroad()
         {
-            LoginPage login = new LoginPage();
+            LoginPage login = new LoginPage(Driver);
           
             login.Email.Clear();
             login.Passwword.Clear();
-            Driver.driver.Close();
+            Driver.Close();
 
         }
         }

@@ -6,9 +6,9 @@ namespace BDDSpeckFlowProject
 {
    public class LoginPage
     {
-        public LoginPage()
+        public LoginPage(IWebDriver driver)
         {
-            PageFactory.InitElements(Driver.driver, this);
+            PageFactory.InitElements(driver, this);
 
             //PageFactory.InitElements(_Driver.firefox, this);
         }
