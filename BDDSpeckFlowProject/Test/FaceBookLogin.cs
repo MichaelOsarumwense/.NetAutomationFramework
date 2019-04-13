@@ -1,6 +1,8 @@
 ﻿
 
 using FluentAssertions;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Configuration;
 using System.Threading;
@@ -8,24 +10,24 @@ using TechTalk.SpecFlow;
 
 namespace BDDSpeckFlowProject
 {
-
-   [Binding]
-    class FaceBookLogin
+    [Parallelizable]
+    [Binding]
+   public class FaceBookLogin
     {
-
+        public IWebDriver Driver { get; set; }
         [Given(@"The User Navigates to facebook")]
         public void GivenTheUserNavigatestoFacebook()
         {
-            Driver.driver = new ChromeDriver();
-            Driver.driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["FoxUrl"]);
-            Driver.driver.Manage().Window.Maximize();
+            Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["FoxUrl"]);
             Thread.Sleep(1000);
         }
 
         [When(@"The user enters correct username")]
         public void AndTheUserenterscorrectUsername()
         {
-            LoginPage login = new LoginPage();
+            LoginPage login = new LoginPage(Driver);
             login.Email.SendKeys(ConfigurationManager.AppSettings["username"]);
             Thread.Sleep(1000);
         }
@@ -33,7 +35,7 @@ namespace BDDSpeckFlowProject
         [When(@"The user enters correct password")]
         public void AndTheUserenterscorrectPassword()
         {
-            LoginPage login = new LoginPage();
+            LoginPage login = new LoginPage(Driver);
             login.Passwword.SendKeys(ConfigurationManager.AppSettings["password"]);
             Thread.Sleep(1000);
         }
@@ -42,13 +44,11 @@ namespace BDDSpeckFlowProject
         [Then(@"the user should be logged in")]
         public void Thentheusershouldbeloggedin()
         {
-            LoginPage login = new LoginPage();
-            login.LoginButton.Should().NotBeNull();
-           
+            LoginPage login = new LoginPage(Driver);
+            login.LoginButton.Click();
+            //login.LoginButton.Should().NotBeNull();
 
-
-            Thread.Sleep(1000);
-            Driver.driver.Close();
+            Driver.Close();
 
         }
     }

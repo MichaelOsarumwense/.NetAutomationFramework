@@ -128,13 +128,11 @@
       <DependentUpon>MultipleLogin.feature</DependentUpon>
     </Compile>
     <Compile Include="POM\DropDownMenu.cs" />
-    <Compile Include="POM\Driver.cs" />
     <Compile Include="POM\HomePage.cs" />
     <Compile Include="POM\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\MultipleLogin.cs" />
     <Compile Include="Test\FaceBookLogin.cs" />
-    <Compile Include="Test\FacebookProfile.cs" />
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
